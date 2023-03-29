@@ -28,7 +28,7 @@ function ContactList() {
               id={contact.id}
               className={css.contactListItem}
             >
-              <span className={css.contactListName}>{contact.nameInput}</span>
+              <span className={css.contactListName}>{contact.name}</span>
               <span className={css.contactListNumber}>{contact.number}</span>
               <button
                 className={css.deleteButton}

@@ -6,6 +6,11 @@ import { selectIsLoggenIn } from 'redux/auth/selectors';
 function Header() {
   const isLoggedIn = useSelector(selectIsLoggenIn);
 
-  return <>{isLoggedIn ? <UserMenu /> : <Navigation />}</>;
+  return (
+    <>
+      {isLoggedIn && <UserMenu />}
+      <Navigation />
+    </>
+  );
 }
 export default Header;

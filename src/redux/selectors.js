@@ -13,7 +13,7 @@ export const getFilteredContacts = createSelector(
     // Виконуємо обчислення та повертаємо результат
     console.log('contacts from selector', contacts);
     return contacts.filter(contact => {
-      return contact.nameInput.toLowerCase().includes(filter.toLowerCase());
+      return contact.name.toLowerCase().includes(filter.toLowerCase());
     });
   }
 );

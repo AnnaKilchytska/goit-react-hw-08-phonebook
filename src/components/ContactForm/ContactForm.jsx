@@ -7,7 +7,7 @@ import { getContacts } from 'redux/selectors';
 import css from './ContactForm.module.css';
 
 function ContactForm() {
-  const [nameInput, setName] = useState('');
+  const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const contacts = useSelector(getContacts);
 
@@ -32,18 +32,20 @@ function ContactForm() {
 
     const contact = {
       id: nanoid(),
-      nameInput,
+      name,
       number,
     };
 
     const isInContacts = contacts.find(
-      item => item.nameInput.toLowerCase() === contact.nameInput.toLowerCase()
+      item => item.name.toLowerCase() === contact.name.toLowerCase()
     );
 
     if (isInContacts) {
-      alert(`${contact.nameInput} is already in contact list!`);
+      alert(`${contact.name} is already in contact list!`);
       return;
     }
+
+    console.log('contact after submit', contact);
 
     dispatch(addContact(contact));
     formReset();
@@ -66,7 +68,7 @@ function ContactForm() {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           onChange={handleInputChange}
-          value={nameInput}
+          value={name}
         />
       </label>
       <label htmlFor="number" className={css.inputLabel}>

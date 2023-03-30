@@ -58,7 +58,7 @@ export const refreshUser = createAsyncThunk(
     console.log('persistedToken', persistedToken);
 
     if (persistedToken === null) {
-      thunkAPI.rejectWithValue('Please, login first!');
+      return thunkAPI.rejectWithValue('Please, login first!');
     }
     try {
       setAuthHeader(persistedToken);

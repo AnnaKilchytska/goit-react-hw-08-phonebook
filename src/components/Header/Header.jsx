@@ -1,3 +1,4 @@
+import AuthNav from 'components/Auth/AuthNav';
 import Navigation from 'components/Navigation/Navigation';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
@@ -8,8 +9,8 @@ function Header() {
 
   return (
     <>
-      {isLoggedIn && <UserMenu />}
       <Navigation />
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </>
   );
 }

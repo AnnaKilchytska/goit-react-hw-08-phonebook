@@ -3,8 +3,14 @@ import css from './ContactList.module.css';
 import { deleteContact, fetchContacts } from 'redux/operations';
 import { getError, getFilteredContacts, getIsLoading } from 'redux/selectors';
 import { useEffect } from 'react';
+// import { Fab, TextField } from '@mui/material';
+// import EditIcon from '@mui/icons-material/Edit';
 
 function ContactList() {
+  // const [isBeingEdited, setIsBeingEdited] = useState(false);
+
+  // const handleEdit = () => setIsBeingEdited(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,6 +43,15 @@ function ContactList() {
               >
                 Delete
               </button>
+              {/* <Fab
+                style={{ background: '#4242e5' }}
+                onClick={handleEdit}
+                size="small"
+                color="secondary"
+                aria-label="edit"
+              >
+                <EditIcon />
+              </Fab> */}
             </li>
           );
         })}

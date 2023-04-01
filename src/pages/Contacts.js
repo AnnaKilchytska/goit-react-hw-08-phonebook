@@ -5,7 +5,7 @@ import Filter from 'components/Filter/Filter';
 export default function Contacts() {
   return (
     <>
-      <h1>Phonebook</h1>
+      <h1 style={{ textAlign: 'center' }}>Phonebook</h1>
       <ContactForm />
       <Filter />
       <ContactList />

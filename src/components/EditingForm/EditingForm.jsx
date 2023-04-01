@@ -1,26 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/operations';
-import css from './ContactForm/ContactForm.module.css';
+import { TextField } from '@mui/material';
+import css from './EditindForm.module.css';
 
 const EditingForm = ({ id, nameProp, numberProp, onSubmit }) => {
-  // const [name, setName] = useState(nameProp);
-  // const [number, setNumber] = useState(numberProp);
-
   const dispatch = useDispatch();
-
-  // const handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   switch (name) {
-  //     case 'name':
-  //       setName(value);
-  //       break;
-  //     case 'number':
-  //       setNumber(value);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -65,8 +49,8 @@ const EditingForm = ({ id, nameProp, numberProp, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name" className={css.inputLabel}>
+    <form onSubmit={handleSubmit} className={css.EditingForm}>
+      {/* <label htmlFor="name" className={css.inputLabel}>
         Name
         <input
           className={css.input}
@@ -87,18 +71,17 @@ const EditingForm = ({ id, nameProp, numberProp, onSubmit }) => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           value={numberProp}
         />
-      </label>
+      </label> */}
 
-      {/* <TextField
+      <TextField
         id="outlined-name"
         label="Change contact name"
         type="text"
-        // className={css.input}
+        className={css.input}
         name="name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        // required
-        // onChange={handleInputChange}
+        required
         defaultValue={nameProp}
         size="small"
       />
@@ -107,15 +90,14 @@ const EditingForm = ({ id, nameProp, numberProp, onSubmit }) => {
         id="outlined-number"
         label="Change contact number"
         type="tel"
-        // className={css.input}
+        className={css.input}
         name="number"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        // required
-        // onChange={handleInputChange}
+        required
         defaultValue={numberProp}
         size="small"
-      /> */}
+      />
 
       <button type="submit" className={css.formButton}>
         Update contact

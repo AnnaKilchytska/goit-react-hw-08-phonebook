@@ -5,7 +5,7 @@ import { getError, getFilteredContacts, getIsLoading } from 'redux/selectors';
 import { useEffect, useState } from 'react';
 import { Fab } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-import EditingForm from 'components/EditingForm';
+import EditingForm from 'components/EditingForm/EditingForm';
 
 function ContactList() {
   const [isBeingEdited, setIsBeingEdited] = useState(false);
@@ -65,8 +65,8 @@ function ContactList() {
               {id === contact.id && isBeingEdited && (
                 <EditingForm
                   id={contact.id}
-                  name={contact.name}
-                  number={contact.number}
+                  nameProp={contact.name}
+                  numberProp={contact.number}
                   onSubmit={toggleIsBeingEdited}
                 />
               )}

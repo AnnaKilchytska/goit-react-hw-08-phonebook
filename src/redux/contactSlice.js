@@ -91,12 +91,11 @@ const contactsSlice = createSlice({
       .addCase(editContact.fulfilled, (state, action) => {
         console.log('payload editing', action.payload);
 
-        state.items[action.payload.id].name = action.payload.name
-          ? action.payload.name
-          : state.items[action.payload.id].name;
-        state.items[action.payload.id].number = action.payload.number
+        const current = state.items.find(item => item.id === action.payload.id);
+        current.name = action.payload.name ? action.payload.name : current.name;
+        current.number = action.payload.number
           ? action.payload.number
-          : state.items[action.payload.id].number;
+          : current.number;
       });
   },
 });

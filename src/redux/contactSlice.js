@@ -90,6 +90,7 @@ const contactsSlice = createSlice({
       })
       .addCase(editContact.fulfilled, (state, action) => {
         console.log('payload editing', action.payload);
+
         state.items[action.payload.id].name = action.payload.name
           ? action.payload.name
           : state.items[action.payload.id].name;

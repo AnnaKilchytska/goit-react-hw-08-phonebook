@@ -25,6 +25,32 @@ const EditingForm = ({ id, nameProp, numberProp, onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+    if (form.elements.name.value === '' && form.elements.number.value === ``) {
+      onSubmit();
+      return;
+    }
+
+    if (form.elements.name.value === '') {
+      dispatch(
+        editContact({
+          id,
+          body: {
+            number: form.elements.number?.value,
+          },
+        })
+      );
+    }
+    if (form.elements.number.value === '') {
+      dispatch(
+        editContact({
+          id,
+          body: {
+            name: form.elements.name?.value,
+          },
+        })
+      );
+    }
+
     dispatch(
       editContact({
         id,

@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.5bcf4a76.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.bc4e76bf.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.19edc648.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.5787902e.js",
     "static/media/yarn-phone-g482e08332_1280.png": "/goit-react-hw-08-phonebook/static/media/yarn-phone-g482e08332_1280.3345b7197594fbc5567d.png",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.5bcf4a76.css.map": "/goit-react-hw-08-phonebook/static/css/main.5bcf4a76.css.map",
-    "main.bc4e76bf.js.map": "/goit-react-hw-08-phonebook/static/js/main.bc4e76bf.js.map"
+    "main.19edc648.css.map": "/goit-react-hw-08-phonebook/static/css/main.19edc648.css.map",
+    "main.5787902e.js.map": "/goit-react-hw-08-phonebook/static/js/main.5787902e.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bcf4a76.css",
-    "static/js/main.bc4e76bf.js"
+    "static/css/main.19edc648.css",
+    "static/js/main.5787902e.js"
   ]
 }

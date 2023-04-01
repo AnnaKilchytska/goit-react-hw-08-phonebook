@@ -1,9 +1,6 @@
-import { TextField } from '@mui/material';
-// import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/operations';
 import css from './ContactForm/ContactForm.module.css';
-import { useState } from 'react';
 
 const EditingForm = ({ id, nameProp, numberProp, onSubmit }) => {
   // const [name, setName] = useState(nameProp);

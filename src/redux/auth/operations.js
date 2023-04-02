@@ -16,9 +16,7 @@ export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      console.log('credentials', credentials);
       const res = await axios.post('/users/signup', credentials);
-      console.log('res', res);
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
@@ -42,7 +40,6 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk('/auth/logout', async (_, thunkAPI) => {
   try {
-    console.log('log out is triggered!');
     await axios.post('users/logout');
     clearAuthHeader();
   } catch (error) {
@@ -55,7 +52,6 @@ export const refreshUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
-    console.log('persistedToken', persistedToken);
 
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Please, login first!');

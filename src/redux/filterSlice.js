@@ -8,8 +8,6 @@ const filterSlice = createSlice({
   // Об'єкт редюсерів
   reducers: {
     filterContacts(state, action) {
-      console.log(action.payload);
-
       state.value = action.payload;
     },
   },

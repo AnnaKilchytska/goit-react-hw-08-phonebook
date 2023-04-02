@@ -8,7 +8,6 @@ import {
 } from './operations';
 
 const handlePending = state => {
-  // state.isLoading = true;
   return {
     ...state,
     isLoading: true,
@@ -16,8 +15,6 @@ const handlePending = state => {
 };
 
 const handleRejected = (state, action) => {
-  // state.isLoading = false;
-  // state.error = action.payload;
   return {
     ...state,
     isLoading: false,
@@ -39,10 +36,6 @@ const contactsSlice = createSlice({
     builder
       .addCase(fetchContacts.pending, handlePending)
       .addCase(fetchContacts.fulfilled, (state, action) => {
-        // state.isLoading = false;
-        // state.error = null;
-        // state.items = action.payload;
-        console.log('fetching', action.payload);
         return {
           ...state,
           isLoading: false,
@@ -54,10 +47,6 @@ const contactsSlice = createSlice({
       .addCase(addContact.pending, handlePending)
       .addCase(addContact.rejected, handleRejected)
       .addCase(addContact.fulfilled, (state, action) => {
-        // state.isLoading = false;
-        // state.error = null;
-        // state.items = [...state.items, action.payload];
-        // state.items.push(action.payload);
         return {
           ...state,
           isLoading: false,
@@ -67,15 +56,6 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.pending, handlePending)
       .addCase(deleteContact.rejected, handleRejected)
       .addCase(deleteContact.fulfilled, (state, action) => {
-        // state.isLoading = false;
-        // state.error = null;
-        console.log('payload on delete', action.payload);
-        // const index = state.items.findIndex(
-        //   contact => contact.id === action.payload.id
-        // );
-        // state.items.splice(index, 1, action.payload);
-        // state.items = state.items.filter(item => item.id !== action.payload.id);
-
         return {
           ...state,
           isLoading: false,
@@ -89,8 +69,6 @@ const contactsSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(editContact.fulfilled, (state, action) => {
-        console.log('payload editing', action.payload);
-
         const current = state.items.find(item => item.id === action.payload.id);
         current.name = action.payload.name ? action.payload.name : current.name;
         current.number = action.payload.number

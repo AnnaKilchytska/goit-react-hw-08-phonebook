@@ -19,11 +19,6 @@ export default function RegisterForm() {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    console.log({
-      name: form.elements.name.value,
-      email: form.elements.email.value,
-      password: form.elements.password.value,
-    });
     dispatch(
       register({
         name: form.elements.name.value,
@@ -31,7 +26,6 @@ export default function RegisterForm() {
         password: form.elements.password.value,
       })
     );
-    console.log('form is submitted');
     form.reset();
   }
 

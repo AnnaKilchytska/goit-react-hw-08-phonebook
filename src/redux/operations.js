@@ -10,7 +10,6 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/contacts');
-      console.log(response);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -50,7 +49,6 @@ export const editContact = createAsyncThunk(
         `/contacts/${credentials.id}`,
         credentials.body
       );
-      console.log('response', response);
       return response.data;
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);

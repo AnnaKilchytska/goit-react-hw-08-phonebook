@@ -16,7 +16,6 @@ function ContactList() {
   const handleEdit = id => {
     toggleIsBeingEdited();
     setId(id);
-    console.log(id);
   };
 
   const dispatch = useDispatch();
@@ -28,7 +27,6 @@ function ContactList() {
   const filteredContacts = useSelector(getFilteredContacts);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
-  console.log('isLoading', isLoading);
 
   return (
     <>

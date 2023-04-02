@@ -6,19 +6,23 @@ import HomePage from 'pages/HomePage';
 import Login from 'pages/Login';
 import Register from 'pages/Register';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/operations';
 import css from './App.module.css';
+import { selectIsRefreshing } from 'redux/auth/selectors';
 
 function App() {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <div className={css.AppContainer}>
       <Routes>
         <Route path="/" element={<Layout />}>
